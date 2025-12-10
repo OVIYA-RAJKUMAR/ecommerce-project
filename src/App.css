@@ -1,0 +1,71 @@
+/*
+ * Updated #root styles to allow the content (Home component) 
+ * to span the full width/height of the viewport, not just a max-width container.
+ */
+#root {
+  /* Commented out original lines that restricted width and centered the root container */
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  
+  padding: 0; /* Removing the default 2rem padding to avoid spacing issues */
+  text-align: center; /* Keeping existing alignment */
+  
+  width: 100%; /* Ensure root spans full width */
+  min-height: 100vh; /* Ensure root spans full height */
+}
+
+
+/* * ⚠️ CRUCIAL: Add these styles for the Header component/element. 
+ * Replace `.header-bar` with the actual class name used on your dark header element 
+ * ("THE TIMELESS TREASURES").
+ */
+.header-bar {
+  position: fixed; /* Takes the header out of the document flow */
+  top: 0;          /* Places it at the very top */
+  left: 0;         /* Places it at the very left */
+  width: 100%;     /* Makes it span the entire viewport width */
+  z-index: 1000;   /* Ensures it stays on top of all other content */
+
+  /* You may need to add/ensure these exist for the header to look correct: */
+  /* background-color: #3b2f2f; */
+  /* height: 70px; */ 
+}
+
+
+/* --- Other existing styles retained below --- */
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
